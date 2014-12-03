@@ -24,9 +24,37 @@ $RECYCLE.BIN/
 .DS_Store
 .AppleDouble
 .LSOverride
-
+#dotNet project
+[Oo]bj/
+[Bb]in/
+TestResults/
+.nuget/
+*.sln.ide/
+_ReSharper.*/
+packages/
+artifacts/
+PublishProfiles/
+*.user
+*.suo
+*.cache
+*.docstates
+_ReSharper.*
+nuget.exe
+*net45.csproj
+*net451.csproj
+*k10.csproj
+*.psess
+*.vsp
+*.pidb
+*.userprefs
+*DS_Store
+*.ncrunchsolution
+*.*sdf
+*.ipch
+*.sln.ide
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
