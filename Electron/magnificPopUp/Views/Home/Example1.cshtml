@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Example1";
+}
+
+<h2>利用magnicPopup实现多组图片弹出</h2>
+<h3>第一组</h3>
+<div class="gallery">
+    <a href="~/content/cat-big.png" title="Cat"><img src="~/content/cat-small.png" width="75" height="75"></a>
+    <a href="~/content/dog-big.png" title="Dog"><img src="~/content/dog-small.png" width="75" height="75"></a>
+</div>
+<h3>第二组</h3>
+<div class="gallery">
+    <a href="~/content/panda-big.png" title="Panda"><img src="~/content/panda-small.png" width="75" height="75"></a>
+</div>
+
+@section myHeader{
+    <!--Add magnific-popup.css-->
+    <link href="~/Content/magnific-popup.css" rel="stylesheet" />
+}
+@section myScript{
+    <!--Add Jquery.js -->
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Scripts/jquery.magnific-popup.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $('.gallery').each(function () {
+                $(this).magnificPopup({
+                    delegate: 'a',
+                    type: 'image',
+                    tLoading: 'Loading image #%curr%...',
+                    mainClass: 'mfp-img-mobile',
+                    gallery: {
+                        enabled: true,
+                        navigateByImgClick: true,
+                        preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+                    },
+                    image: {
+                        tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+                        titleSrc: function (item) {
+                            return item.el.attr('title') + '<small>by MVC application</small>';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+}

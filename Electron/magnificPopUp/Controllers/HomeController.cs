@@ -14,5 +14,9 @@ namespace magnificPopUp.Controllers
         {
             return View();
         }
+        public ActionResult Example1()
+        {
+            return View();
+                    }
 	}
 }
